@@ -2,7 +2,7 @@ import React from "react";
 
 const Project = () => {
   return (
-    <div id="project" className="bg-[#F9F9F9] py-24 h-auto">
+    <div id="project" className="bg-[#F9F9F9] py-[8rem] px-0 h-auto">
     <div className="container my-12 mx-auto px-4 md:px-12">
       <div className="text-center">
         <h3 className="text-[#147efb] text-[1.75rem] font-bold mb-4 uppercase">
@@ -12,8 +12,8 @@ const Project = () => {
           These are the recent projects to showcase my skills
         </h4>
       </div>
-      <div id="container" className="mx-auto my-0 max-w-[120rem] px-16 py-0">
-        <div className="flex flex-wrap lg:gap-20 md:gap-0 gap-10 justify-center items-center -mx-1 lg:-mx-4">
+      <div id="container" className="mx-auto my-0 max-w-[135rem] px-10 py-0">
+        <div className="flex flex-wrap lg:gap-48 md:gap-1 gap-10 justify-center items-center -mx-1 lg:-mx-4">
           <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
             <article className="overflow-hidden rounded-lg shadow-lg">
               <img

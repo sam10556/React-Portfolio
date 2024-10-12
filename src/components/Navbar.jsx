@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div
       id="navBar"
-      className="bg-white flex justify-between items-center h-auto w-full mx-auto px-20 lg:py-7 py-12 left-0 top-0 text-[1.7rem] fixed shadow-md z-200"
+      className="bg-white flex justify-between items-center h-auto w-full mx-auto px-20 lg:py-7 py-12 left-0 top-0 text-[1.7rem] fixed shadow-md z-20"
     >
       {/* Logo */}
       <h1 className="w-full text-3xl font-bold text-[#2D2E32] px-10 cursor-pointer">

@@ -2,11 +2,16 @@ import React from "react";
 
 const About = () => {
   return (
-    <div id="about" className="bg-[#F9F9F9] lg:py-[15rem] md:py-[8rem] sm:py-[8rem] py-[8rem] px-0 h-auto">
+    <div id="about" className="bg-[#F9F9F9] lg:py-[15rem] md:py-[13rem] sm:py-[8rem] py-[8rem] px-0 h-auto">
       <div id="container" className="mx-auto my-0 max-w-[120rem] px-16 py-0">
         <div id="abtcon" className="items-center grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 justify-center text-center lg:text-start">
             <div id="img" className="relative flex justify-center text-center mb-12">
-            <div className="about-img h-[30rem] w-[30rem] lg:h-[40rem] lg:w-[40rem] text-center"></div>
+            <div className="about-img h-[30rem] w-[35rem] lg:h-[35rem] md:h-[35rem] lg:w-[41rem] md:w-[41rem] text-center">
+              <span className="absolute hidden lg:block md:block lg:bottom-[-33px] md:bottom-[-40px] lg:right-[0px] md:right-[100px] bg-[#f9f9f9] rounded-full">
+                <img src="./image/manT.png" alt="" className="w-[50px] absolute z-10 bottom-32 right-[70px]"/>
+                <img src="./image/fullstack.png" alt="" className="spin w-80 h-80 rounded-full" />
+              </span>
+            </div>
             </div>
             <div className="px-10">
                 <h3 className="text-[#147efb] text-[1.75rem] font-bold mb-4 uppercase">About Me</h3>
@@ -20,7 +25,8 @@ const About = () => {
               >
                 Download CV
               </button>
-                <img src="/image/manT.png" alt="work emoji" className="w-[40px]"/>
+                <img src="/image/backhand.png" alt="work emoji" className="hidden md:block lg:block w-[40px]"/>
+                <img src="/image/manT.png" alt="work emoji" className="lg:hidden md:hidden block w-[40px]"/>
                 </div>
             </div>
         </div>

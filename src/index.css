@@ -40,7 +40,19 @@ p{
   background-size: cover;
   background-position: 50%;
   border-radius: 20px;
-  border: 3px solid black;
+}
+
+.spin{
+  background-size: cover;
+  background-position: 50%;
+  animation: spin 10s linear infinite;
+
+}
+
+@keyframes spin{
+  100%{
+    transform: rotate(1turn);
+  }
 }
 
 @keyframes animate{
@@ -53,4 +65,17 @@ p{
   100%{
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
+}
+
+@keyframes gototop {
+  0% {
+    transform: translateY(-0.125rem);
+  }
+  100% {
+    transform: translateY(0.25rem);
+  }
+}
+
+.animate-gototop {
+  animation: gototop 1.2s linear infinite alternate-reverse;
 }

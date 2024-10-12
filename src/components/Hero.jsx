@@ -5,17 +5,17 @@ const Hero = () => {
     <div id="home" className="bg-[#F9F9F9] flex lg:flex-col h-auto lg:h-[100vh] w-full relative justify-center py-44 lg:py-0 px-0">
       <div id="container" className="mx-auto my-0 max-w-[120rem] px-16 py-0">
         <div id="content" className="flex flex-col lg:flex-row text-center items-center gap-12 lg:gap-40 h-auto lg:h-[80rem] justify-center relative">
-          <div id="hero-main" className="flex flex-col-reverse lg:flex-row items-center gap-12 h-auto text-center lg:gap-40 justify-center relative">
+          <div id="hero-main" className="flex flex-col-reverse lg:flex-row items-center gap-12 h-auto text-start lg:gap-40 justify-center relative">
             <div id="hero-text" className="flex flex-col max-w-[50rem] gap-2 relative">
-              <h1 className="text-[#2D2E32] lg:text-8xl md:text-7xl sm:text-6xl text-6xl mb-8 mt-8 font-bold">
+              <h1 className="text-[#2D2E32] lg:text-[5.5rem] md:text-7xl sm:text-6xl text-6xl mb-8 mt-8 font-bold">
                 Front-End React Developer
               </h1>
               <img />
-              <p className="text-[#555555] text-2xl">
+              <p className="text-[#555555] text-[1.8rem]">
                 Hi, I'm Samyak Shah. A passionate Front-end React Developer
                 based in Belgrade, Serbia. 📍
               </p>
-              <span className="flex justify-center gap-5 mr-10 my-10">
+              <span className="flex justify-start gap-5 mr-10 my-10">
                 <a
                   href="#linkedin"
                   className="text-[#2d2e32] text-5xl transition-all duration-200 hover:text-[#147EFB]"
@@ -70,25 +70,25 @@ const Hero = () => {
             <li>
               <img
                 src="https://skillicons.dev/icons?i=react,next"
-                className="h-20"
+                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out "
               />
             </li>
             <li>
               <img
                 src="https://skillicons.dev/icons?i=mongodb,express,nodejs"
-                className="h-20"
+                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out"
               />
             </li>
             <li>
               <img
                 src="https://skillicons.dev/icons?i=git,javascript"
-                className="h-20"
+                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out"
               />
             </li>
             <li>
               <img
                 src="https://skillicons.dev/icons?i=php,cpp"
-                className="h-20"
+                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out"
               />
             </li>
           </ul>
