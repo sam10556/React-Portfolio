@@ -7,6 +7,7 @@ html {
   font-family: Poppins,sans-serif;
   font-size: 62.5%;
   scroll-behavior: smooth;
+  @apply transition-colors duration-500;
 }
 
 * {
@@ -26,13 +27,13 @@ p{
 }
 
 .hero-img{
-  background: url("/image/about-pic.png");
+  background: url("/image/Main.JPG");
   background-size: cover;
   background-position: 50%;
 
   animation: animate 5s ease-in-out infinite;
   transition: all 1s ease-in-out;
-  border: 3px solid black;
+  border: 3px solid  rgb(31 41 55);
 }
 
 .about-img{

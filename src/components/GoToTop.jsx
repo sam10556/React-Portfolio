@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 
 const GoToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Scroll to top smoothly
   const gotoBtn = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  // Listen to scroll to toggle visibility of the button
   const listenToScroll = () => {
     let heightToHidden = 250;
     const winScroll =
@@ -27,12 +30,12 @@ const GoToTop = () => {
     <div className="flex justify-center items-center relative">
       {isVisible && (
         <div
-          className="top-btn fixed bottom-20 right-5 md:right-20 lg:right-20 w-20 h-20 text-black bg-btn shadow-btn shadow-lg bg-[#F9F9F9] rounded-full z-[999] flex justify-center items-center cursor-pointer"
+          className="top-btn fixed bottom-20 right-5 md:right-20 lg:right-20 w-20 h-20 text-black bg-btn shadow-btn shadow-md shadow-gray-800 bg-[#F9F9F9] dark:bg-[#1a1a1a] dark:shadow-gray-800 dark:text-white rounded-full z-[999] flex justify-center items-center cursor-pointer hover:bg-[#e2e2e2] dark:hover:bg-[#333] transition-colors duration-300"
           onClick={gotoBtn}
         >
           <svg
             className="animate-gototop"
-            fill="#000000"
+            fill="currentColor"
             height="20px"
             width="20px"
             version="1.1"
@@ -49,11 +52,12 @@ const GoToTop = () => {
               strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
-              {" "}
               <path
                 id="XMLID_21_"
-                d="M213.107,41.894l-37.5-37.5c-5.857-5.858-15.355-5.858-21.213,0l-37.5,37.5 c-4.29,4.29-5.573,10.742-3.252,16.347c2.322,5.605,7.792,9.26,13.858,9.26H150V315c0,8.284,6.716,15,15,15c8.284,0,15-6.716,15-15 V67.5h22.5c6.067,0,11.537-3.655,13.858-9.26C218.68,52.635,217.397,46.184,213.107,41.894z"
-              ></path>{" "}
+                d="M213.107,41.894l-37.5-37.5c-5.857-5.858-15.355-5.858-21.213,0l-37.5,37.5
+                c-4.29,4.29-5.573,10.742-3.252,16.347c2.322,5.605,7.792,9.26,13.858,9.26H150V315c0,8.284,6.716,15,15,15
+                c8.284,0,15-6.716,15-15V67.5h22.5c6.067,0,11.537-3.655,13.858-9.26C218.68,52.635,217.397,46.184,213.107,41.894z"
+              />
             </g>
           </svg>
         </div>

@@ -2,20 +2,20 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div id="contact" className="bg-[#F9F9F9] lg:py-44 md:py-32 sm:py-32 py-32 px-0">
+    <div id="contact" className="bg-[#F9F9F9] dark:bg-[#0e1012] lg:py-44 md:py-32 sm:py-32 py-32 px-0">
       <div id="container" className="mx-auto my-0 max-w-[105rem] lg:px-16 md:px-16 sm:px-16 px-7 py-0">
         <div className="flex flex-col">
-          <div className="text-center lg:text-start md:text-start sm:text-center">
-            <p className="uppercase text-[#147efb] text-[1.7rem] font-extrabold mb-4">
+          <div className="text-center">
+            <p className="uppercase text-[#147efb] dark:text-[#82aaff] text-[1.7rem] font-extrabold mb-4">
               Contact
             </p>
-            <h3 className="text-[#2d2e32] text-[2.5rem] font-bold">
+            <h3 className="text-[#2d2e32] dark:text-[#e4e4e7] text-[2.5rem] font-bold">
               Don't be shy! Hit me up!
             </h3>
           </div>
-          <div className="flex flex-wrap gap-20 lg:gap-32 md:gap-32 sm:gap-20 mt-24 flex-col lg:flex-row md:flex-row sm:flex-col justify-center lg:justify-start md:justify-start sm:justify-center text-center lg:text-start md:text-start sm:text-center">
+          <div className="flex flex-wrap gap-20 lg:gap-32 md:gap-32 sm:gap-20 mt-24 flex-col lg:flex-row md:flex-row sm:flex-col justify-center text-center">
             <div className="items-center flex lg:gap-6 md:gap-6 flex-col lg:flex-row md:flex-row">
-              <span className="flex items-center text-[#147efb] h-20 justify-center w-20">
+              <span className="flex items-center text-[#147efb] dark:text-[#82aaff] h-20 justify-center w-20">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -36,16 +36,16 @@ const Contact = () => {
                 </svg>
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-[#2d2e32] text-[1.7rem] font-bold">
+                <h3 className="text-[#2d2e32] dark:text-[#e4e4e7] text-[1.7rem] font-bold">
                   Location
                 </h3>
-                <p className="text-[#767676] cursor-pointer text-[1.7rem] font-medium hover:text-[#147efb]">
-                  Gujarat,India
+                <p className="text-[#767676] dark:text-[#a1a1aa] cursor-pointer text-[1.7rem] font-medium hover:text-[#147efb] dark:hover:text-[#147EFB]">
+                  Gujarat, India
                 </p>
               </div>
             </div>
             <div className="items-center flex lg:gap-6 md:gap-6 flex-col lg:flex-row md:flex-row">
-              <span className="flex items-center text-[#147efb] h-20 justify-center w-20">
+              <span className="flex items-center text-[#147efb] dark:text-[#82aaff] h-20 justify-center w-20">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -63,10 +63,10 @@ const Contact = () => {
                 </svg>
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-[#2d2e32] text-[1.7rem] font-bold">Mail</h3>
+                <h3 className="text-[#2d2e32] dark:text-[#e4e4e7] text-[1.7rem] font-bold">Mail</h3>
                 <a
                   href="mailto:samyak55.shah@gmail.com"
-                  className="text-[#767676] cursor-pointer text-[1.7rem] font-medium hover:text-[#147efb]"
+                  className="text-[#767676] dark:text-[#a1a1aa] cursor-pointer text-[1.7rem] font-medium hover:text-[#147efb] dark:hover:text-[#147EFB]"
                 >
                   samyak55.shah@gmail.com
                 </a>

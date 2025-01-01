@@ -1,24 +1,63 @@
 import React from "react";
+import { animate, delay, motion } from "framer-motion";
+
+const fadeIn = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (idx) => {
+    return {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.5 * idx,
+      },
+    };
+  },
+};
+
+const skillIcons = [
+  "react,next",
+  "mongodb,express,nodejs",
+  "git,javascript",
+  "php,cpp",
+];
 
 const Hero = () => {
   return (
-    <div id="home" className="bg-[#F9F9F9] flex lg:flex-col h-auto lg:h-[100vh] w-full relative justify-center py-44 lg:py-0 px-0">
-      <div id="container" className="mx-auto my-0 max-w-[120rem] px-16 py-0">
-        <div id="content" className="flex flex-col lg:flex-row text-center items-center gap-12 lg:gap-40 h-auto lg:h-[80rem] justify-center relative">
-          <div id="hero-main" className="flex flex-col-reverse lg:flex-row items-center gap-12 h-auto text-start lg:gap-40 justify-center relative">
-            <div id="hero-text" className="flex flex-col max-w-[50rem] gap-2 relative">
-              <h1 className="text-[#2D2E32] lg:text-[5.5rem] md:text-7xl sm:text-6xl text-6xl mb-8 mt-8 font-bold">
-                Front-End React Developer
+    <div
+      id="home"
+      className="bg-[#F9F9F9] dark:bg-[#0e1012] flex lg:flex-col h-auto lg:h-[100vh] w-full relative justify-center py-44 lg:py-0 px-0"
+    >
+      <div
+        id="container"
+        className="mx-auto my-0 max-w-[120rem] lg:px-16 md:px-16 px-8 py-0"
+      >
+        <div
+          id="content"
+          className="flex flex-col lg:flex-row text-center items-center gap-12 lg:gap-40 h-auto lg:h-[80rem] justify-center relative"
+        >
+          <div
+            id="hero-main"
+            className="flex flex-col-reverse lg:flex-row items-center gap-12 h-auto lg:text-start md:text-start sm:text-center text-center lg:gap-40 justify-center relative"
+          >
+            <div
+              id="hero-text"
+              className="flex flex-col max-w-[50rem] gap-2 relative"
+            >
+              <h1 className="text-[#2D2E32] dark:text-white lg:text-[5.5rem] md:text-7xl sm:text-6xl text-6xl mb-8 mt-8 font-bold">
+                Full Stack Web Developer
               </h1>
-              <img />
-              <p className="text-[#555555] text-[1.8rem]">
-                Hi, I'm Samyak Shah. A passionate Front-end React Developer
-                based in Belgrade, Serbia. 📍
+              <p className="text-[#555555] dark:text-gray-300 text-[1.8rem]">
+                Hi, I'm Samyak Shah. A passionate Full Stack Web Developer
+                based in Gujarat, India. 📍
               </p>
-              <span className="flex justify-start gap-5 mr-10 my-10">
+              <span className="flex lg:justify-start md:justify-center justify-center gap-5 my-10">
+                {/* LinkedIn Icon */}
                 <a
                   href="#linkedin"
-                  className="text-[#2d2e32] text-5xl transition-all duration-200 hover:text-[#147EFB]"
+                  className="text-[#2d2e32] dark:text-white text-5xl transition-all duration-200 hover:text-[#147EFB] dark:hover:text-[#147EFB]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -39,9 +78,11 @@ const Hero = () => {
                     <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
                   </svg>
                 </a>
+
+                {/* GitHub Icon */}
                 <a
                   href="#Github"
-                  className="text-[#2d2e32] text-5xl transition-all duration-200 hover:text-[#147EFB]"
+                  className="text-[#2d2e32] dark:text-white text-5xl transition-all duration-200 hover:text-[#147EFB] dark:hover:text-[#147EFB]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -60,39 +101,32 @@ const Hero = () => {
                 </a>
               </span>
             </div>
-            <div className="hero-img h-[30rem] w-[30rem] lg:h-[40rem] lg:w-[40rem]"></div>
+
+            {/* Hero Image Placeholder */}
+            <div className="hero-img h-[30rem] w-[30rem] lg:h-[37rem] lg:w-[37rem] bg-gray-300 dark:bg-gray-700 rounded-full"></div>
           </div>
-          <div className="flex lg:flex-row items-center bottom-20 text-[#767676] text-3xl left-0 lg:absolute static flex-col text-center">
-            <p className="text-[#2d2e32] border-b-[2px] lg:border-b-0 lg:border-r-[2px] border-solid border-[#2d2e32] font-semibold mb-8 pb-8 lg:mb-0 lg:pb-0 lg:mr-20 lg:pr-8">
-                Tech Stack
+
+          {/* Tech Stack Section */}
+          <div className="flex lg:flex-row items-center bottom-20 text-[#767676] dark:text-gray-400 text-3xl left-0 lg:absolute static flex-col text-center">
+            <p className="text-[#2d2e32] dark:text-white border-b-[2px] lg:border-b-0 lg:border-r-[2px] border-solid border-[#2d2e32] dark:border-gray-600 font-semibold mb-8 pb-8 lg:mb-0 lg:pb-0 lg:mr-20 lg:pr-8">
+              Tech Stack
             </p>
             <ul className="flex gap-12 justify-center flex-wrap py-5">
-            <li>
-              <img
-                src="https://skillicons.dev/icons?i=react,next"
-                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out "
-              />
-            </li>
-            <li>
-              <img
-                src="https://skillicons.dev/icons?i=mongodb,express,nodejs"
-                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out"
-              />
-            </li>
-            <li>
-              <img
-                src="https://skillicons.dev/icons?i=git,javascript"
-                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out"
-              />
-            </li>
-            <li>
-              <img
-                src="https://skillicons.dev/icons?i=php,cpp"
-                className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out"
-              />
-            </li>
-          </ul>
-
+              {skillIcons.map((icons, idx) => (
+                <motion.li
+                  key={idx}
+                  variants={fadeIn}
+                  initial="initial"
+                  whileInView="animate"
+                  custom={idx}
+                >
+                  <img
+                    src={`https://skillicons.dev/icons?i=${icons}`}
+                    className="h-20 hover:transform hover:translate-y-4 hover:duration-300 hover:ease-in-out"
+                  />
+                </motion.li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
