@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const GoToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
-  
+
   // Scroll to top smoothly
   const gotoBtn = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -27,7 +27,7 @@ const GoToTop = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center relative">
+    <div className=" lg:flex md:flex justify-center items-center relative hidden">
       {isVisible && (
         <div
           className="top-btn fixed bottom-20 right-5 md:right-20 lg:right-20 w-20 h-20 text-black bg-btn shadow-btn shadow-md shadow-gray-800 bg-[#F9F9F9] dark:bg-[#1a1a1a] dark:shadow-gray-800 dark:text-white rounded-full z-[999] flex justify-center items-center cursor-pointer hover:bg-[#e2e2e2] dark:hover:bg-[#333] transition-colors duration-300"
