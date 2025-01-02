@@ -19,7 +19,7 @@ const fadeIn = {
 
 const projects = [
   {
-    title: "Project 1",
+    title: "Pizza Shop",
     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
     techStack: ["React", "Next.js"],
     imgSrc: "https://picsum.photos/600/400/?random",
