@@ -22,7 +22,7 @@ const projects = [
   {
     title: "OvenOnWheels",
     description:
-      "The Pizza Shop Web App is a modern platform for online pizza ordering and management, built with Next.js, MongoDB, Stripe, and Cloudinary. It features a user-friendly interface for customers to browse, customize, and order pizzas, with secure payment processing via Stripe. The admin panel allows efficient management of menu items, categories, users, and orders, with dynamic image handling powered by Cloudinary. With a clean and responsive design, the app delivers a seamless experience for both customers and administrators, making it an ideal solution for pizza businesses.",
+      "The Pizza Shop Web App is a modern platform for online pizza ordering and management, built with Next.js, MongoDB, Stripe, and Cloudinary. It features a user-friendly interface for customers to browse, customize, and order pizzas, with secure payment processing via Stripe. A unique AI-powered Pizza Customization Assistant personalizes recommendations based on customer preferences, dietary needs, and order history, enhancing the user experience.  The admin panel allows efficient management of menu items, categories, users, and orders, with dynamic image handling powered by Cloudinary. With a clean and responsive design, the app delivers a seamless experience for both customers and administrators, making it an ideal solution for pizza businesses.",
     techStack: ["React", "Next.js"],
     imgSrc: "https://picsum.photos/600/400/?random",
     codeLink: "#",
@@ -48,7 +48,8 @@ const projects = [
   },
   {
     title: "Route Planning In Cpp",
-    description: "route or path planning console app made from pure cpp",
+    description:
+      "The Path finding Visualizer is a C++ project that demonstrates efficient route-finding using the A algorithm*. It visually simulates how the algorithm discovers the shortest path between two points on a grid, accounting for obstacles and varying traversal costs. With a clean and interactive interface, users can set start and end points, place barriers, and watch the algorithm dynamically calculate the optimal route in real-time. This project showcases the power of heuristic-based search in a visually engaging and educational way.",
     techStack: ["C++"],
     imgSrc: "https://picsum.photos/600/400/?random",
     codeLink: "#",
@@ -89,6 +90,9 @@ const Project = () => {
                 variants={fadeIn}
                 initial="initial"
                 whileInView="animate"
+                viewport={{
+                  once: true,
+                }}
                 custom={index}
               >
                 <article className="overflow-hidden rounded-lg shadow-lg dark:shadow-gray-800 flex flex-col lg:flex-row">

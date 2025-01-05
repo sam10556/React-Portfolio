@@ -43,7 +43,15 @@ const TextCircleAnimation = () => {
         </defs>
 
         {/* Text following the circular path */}
-        <text fontSize="22" fontWeight="bold" fill="currentColor" style={{fontFamily:" 'Cormorant Garamond' , serif" ,letterSpacing: '5px'}}>
+        <text
+          fontSize="22"
+          fontWeight="bold"
+          fill="currentColor"
+          style={{
+            fontFamily: " 'Cormorant Garamond' , serif",
+            letterSpacing: "5px",
+          }}
+        >
           <textPath href="#circlePath" startOffset="0">
             FULL-STACK &nbsp; WEB &nbsp; DEVELOPER
           </textPath>
@@ -82,7 +90,7 @@ const About = () => {
                   alt="Developer illustration"
                   className="w-[50px] absolute z-10 bottom-32 right-[70px]"
                 />
-                <TextCircleAnimation/>
+                <TextCircleAnimation />
               </span>
             </div>
           </div>
@@ -109,7 +117,7 @@ const About = () => {
               <button
                 type="button"
                 className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center me-2 mb-2"
-                onClick={() => window.open("/CV/resume-example.pdf")}
+                onClick={() => window.open("/CV/Samyak_Shah_Resume.pdf")}
               >
                 Download CV
               </button>

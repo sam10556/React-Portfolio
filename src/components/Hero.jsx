@@ -56,7 +56,7 @@ const Hero = () => {
               <span className="flex lg:justify-start md:justify-center justify-center gap-5 my-10">
                 {/* LinkedIn Icon */}
                 <a
-                  href="#linkedin"
+                  href="https://www.linkedin.com/in/samyak-shah-dev/"
                   className="text-[#2d2e32] dark:text-white text-5xl transition-all duration-200 hover:text-[#147EFB] dark:hover:text-[#147EFB]"
                 >
                   <svg
@@ -81,7 +81,7 @@ const Hero = () => {
 
                 {/* GitHub Icon */}
                 <a
-                  href="#Github"
+                  href="https://github.com/sam10556"
                   className="text-[#2d2e32] dark:text-white text-5xl transition-all duration-200 hover:text-[#147EFB] dark:hover:text-[#147EFB]"
                 >
                   <svg

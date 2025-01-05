@@ -10,7 +10,7 @@ const Footer = () => {
           </h3>
           <div className="flex items-center gap-8 justify-center mt-4">
             <a
-              href="#linkedin"
+              href="https://www.linkedin.com/in/samyak-shah-dev/"
               className="text-white dark:text-[#e4e4e7] text-5xl transition-all duration-200 hover:text-[#147EFB] dark:hover:text-[#147EFB]"
             >
               <svg
@@ -33,7 +33,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="#Github"
+              href="https://github.com/sam10556"
               className="text-white dark:text-[#e4e4e7] text-5xl transition-all duration-200 hover:text-[#147EFB] dark:hover:text-[#147EFB]"
             >
               <svg
