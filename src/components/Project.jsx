@@ -33,16 +33,16 @@ const projects = [
     description:
       "MockMate is an AI-powered interview and exam preparation platform built with React (Vite) on the frontend and Node.js on the backend. It leverages Google's Gemini API to generate intelligent interview questions, evaluate responses, and provide insightful feedback. Currently, the project is being enhanced with LangChain to improve conversational AI capabilities, enabling dynamic, context-aware interactions. Whether you're preparing for a job interview or an exam, MockMate offers a seamless, interactive experience to refine your skills.",
     techStack: ["React", "Express.js", "Node.js"],
-    imgSrc: "https://picsum.photos/600/400/?random",
+    imgSrc: "/image/MockMate.png",
     codeLink: "https://github.com/sam10556/MockMate",
     demoLink: "https://mock-mate-opal.vercel.app/",
   },
   {
     title: "NattyFit",
     description:
-      "The Gym Web App is a feature-rich platform built with the **MERN stack** (MongoDB, Express, React, Node.js) to enhance fitness journeys for gym enthusiasts. Users can explore general content and, after logging in, unlock personalized features like a random workout generator, an AI-powered chatbot for fitness guidance, and regular progress updates.",
+      "The Gym Web App is a comprehensive fitness platform built with the MERN stack (MongoDB, Express, React, Node.js) to support users on their fitness journeys. It offers general content for all visitors, while registered users gain access to personalized features, including a workout tracker, a random workout generator, and an AI-powered fitness chatbot for guidance. Additionally, users can track their progress over time, making it easier to stay motivated and achieve their fitness goals.",
     techStack: ["React", "Express.js", "Node.js"],
-    imgSrc: "https://picsum.photos/600/400/?random",
+    imgSrc: "/image/NattyFit.png",
     codeLink: "https://github.com/sam10556/React-NattyFit",
     demoLink: "https://nattyfit-gym-app.vercel.app/",
   },
@@ -51,7 +51,7 @@ const projects = [
     description:
       "The Path finding Visualizer is a C++ project that demonstrates efficient route-finding using the A algorithm*. It visually simulates how the algorithm discovers the shortest path between two points on a grid, accounting for obstacles and varying traversal costs. With a clean and interactive interface, users can set start and end points, place barriers, and watch the algorithm dynamically calculate the optimal route in real-time. This project showcases the power of heuristic-based search in a visually engaging and educational way.",
     techStack: ["C++"],
-    imgSrc: "https://picsum.photos/600/400/?random",
+    imgSrc: "/image/cpp.png",
     codeLink: "#",
     demoLink: "#",
   },
@@ -60,7 +60,7 @@ const projects = [
     description:
       "My portfolio website is a responsive and minimalistic platform built using React.js and TailwindCSS. It showcases my skills, projects, and experiences in a clean and modern design, emphasizing usability and performance. With a mobile-first approach and smooth navigation, it provides an engaging experience across all devices, reflecting my focus on simplicity and attention to detail in web development.",
     techStack: ["React.jss", "TailwindCSS"],
-    imgSrc: "https://picsum.photos/600/400/?random",
+    imgSrc: "/image/Portfolio.png",
     codeLink: "https://github.com/sam10556/React-Portfolio",
     demoLink: "https://samyakdev.netlify.app/",
   },
@@ -124,7 +124,7 @@ const Project = () => {
                         ))}
                       </div>
                     </header>
-                    <p className="text-[#767676] dark:text-[#a1a1aa] font-semibold text-justify text-xl mb-4 mx-5 leading-relaxed">
+                    <p className="text-[#767676] dark:text-[#a1a1aa] font-semibold text-justify text-2xl mb-4 mx-5 leading-relaxed">
                       {project.description}
                     </p>
                     <footer className="flex items-center justify-center gap-5 leading-none">
