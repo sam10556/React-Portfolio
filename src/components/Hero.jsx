@@ -44,14 +44,14 @@ const Hero = () => {
           >
             <div
               id="hero-text"
-              className="flex flex-col max-w-[50rem] gap-2 relative"
+              className="flex flex-col md:text-center lg:text-start max-w-[50rem] gap-2 relative"
             >
-              <h1 className="text-[#2D2E32] dark:text-white lg:text-[5.5rem] md:text-7xl sm:text-6xl text-6xl mb-8 mt-8 font-bold">
-                Full Stack Web Developer
+              <h1 className="text-[#2D2E32] dark:text-white lg:text-[6.5rem] md:text-7xl sm:text-6xl text-6xl mb-8 mt-8 font-bold">
+                Full Stack Developer
               </h1>
               <p className="text-[#555555] dark:text-gray-300 text-[1.8rem]">
-                Hi, I'm Samyak Shah. A passionate Full Stack Web Developer
-                based in Gujarat, India. 📍
+                Hi, I'm Samyak Shah. A passionate Full Stack Web Developer based
+                in Gujarat, India. 📍
               </p>
               <span className="flex lg:justify-start md:justify-center justify-center gap-5 my-10">
                 {/* LinkedIn Icon */}

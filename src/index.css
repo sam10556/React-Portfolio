@@ -4,7 +4,7 @@
 
 html {
   background-color: #fff;
-  font-family: Poppins,sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 62.5%;
   scroll-behavior: smooth;
   @apply transition-colors duration-500;
@@ -18,52 +18,51 @@ html {
   padding: 0;
 }
 
-.navBar{
+.navBar {
   box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 10px;
 }
 
-p{
-  font-family: Mulish,sans-serif;
+p {
+  font-family: Mulish, sans-serif;
 }
 
-.hero-img{
+.hero-img {
   background: url("/image/Main.JPG");
   background-size: cover;
   background-position: 50%;
 
   animation: animate 5s ease-in-out infinite;
   transition: all 1s ease-in-out;
-  border: 3px solid  rgb(31 41 55);
+  border: 3px solid rgb(31 41 55);
 }
 
-.about-img{
-  background: url("/image/laptop.jpg");
+.about-img {
+  background: url("/image/about-img.png");
   background-size: cover;
   background-position: 50%;
   border-radius: 20px;
 }
 
-.spin{
+.spin {
   background-size: cover;
   background-position: 50%;
   animation: spin 10s linear infinite;
-
 }
 
-@keyframes spin{
-  100%{
+@keyframes spin {
+  100% {
     transform: rotate(1turn);
   }
 }
 
-@keyframes animate{
-  0%{
+@keyframes animate {
+  0% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
-  50%{
+  50% {
     border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
   }
-  100%{
+  100% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
 }

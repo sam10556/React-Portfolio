@@ -24,27 +24,27 @@ const projects = [
     description:
       "The Pizza Shop Web App is a modern platform for online pizza ordering and management, built with Next.js, MongoDB, Stripe, and Cloudinary. It features a user-friendly interface for customers to browse, customize, and order pizzas, with secure payment processing via Stripe. A unique AI-powered Pizza Customization Assistant personalizes recommendations based on customer preferences, dietary needs, and order history, enhancing the user experience.  The admin panel allows efficient management of menu items, categories, users, and orders, with dynamic image handling powered by Cloudinary. With a clean and responsive design, the app delivers a seamless experience for both customers and administrators, making it an ideal solution for pizza businesses.",
     techStack: ["React", "Next.js"],
-    imgSrc: "https://picsum.photos/600/400/?random",
-    codeLink: "#",
-    demoLink: "#",
+    imgSrc: "/image/OvenOnWheels.png",
+    codeLink: "https://github.com/sam10556/OvenOnWheels",
+    demoLink: "https://oven-on-wheels.vercel.app/",
   },
   {
-    title: "Real Estate Web App",
+    title: "MockMate",
     description:
-      "The Real Estate Web App is a dynamic platform built with the MERN stack (MongoDB, Express, React, Node.js) for seamless property management. Users can explore properties nearby, buy or rent them, or upload their own listings for sale or rent. The app features real-time chat powered by Socket.io, enabling users to connect and negotiate directly. With a responsive design, intuitive navigation, and robust functionality, this app simplifies property transactions and fosters smooth communication between users.",
+      "MockMate is an AI-powered interview and exam preparation platform built with React (Vite) on the frontend and Node.js on the backend. It leverages Google's Gemini API to generate intelligent interview questions, evaluate responses, and provide insightful feedback. Currently, the project is being enhanced with LangChain to improve conversational AI capabilities, enabling dynamic, context-aware interactions. Whether you're preparing for a job interview or an exam, MockMate offers a seamless, interactive experience to refine your skills.",
     techStack: ["React", "Express.js", "Node.js"],
     imgSrc: "https://picsum.photos/600/400/?random",
-    codeLink: "#",
-    demoLink: "#",
+    codeLink: "https://github.com/sam10556/MockMate",
+    demoLink: "https://mock-mate-opal.vercel.app/",
   },
   {
-    title: "Gym Web App",
+    title: "NattyFit",
     description:
       "The Gym Web App is a feature-rich platform built with the **MERN stack** (MongoDB, Express, React, Node.js) to enhance fitness journeys for gym enthusiasts. Users can explore general content and, after logging in, unlock personalized features like a random workout generator, an AI-powered chatbot for fitness guidance, and regular progress updates.",
     techStack: ["React", "Express.js", "Node.js"],
     imgSrc: "https://picsum.photos/600/400/?random",
-    codeLink: "#",
-    demoLink: "#",
+    codeLink: "https://github.com/sam10556/React-NattyFit",
+    demoLink: "https://nattyfit-gym-app.vercel.app/",
   },
   {
     title: "Route Planning In Cpp",

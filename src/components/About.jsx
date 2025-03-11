@@ -104,12 +104,15 @@ const About = () => {
               Full Stack Developer <br /> based in Gujarat, India 📍
             </h4>
             <p className="text-[#767676] dark:text-gray-300 text-[1.75rem] font-medium">
-              Hey, my name is Samyak, and I'm a Full Stack Developer. My passion
-              is to create and develop a clean UI/UX for my users.
+              Hello, I'm Samyak, a Full Stack Developer with expertise in
+              designing and developing user-centric web applications. I
+              specialize in creating clean and intuitive UI/UX experiences that
+              elevate user engagement and satisfaction.
               <br />
               <br />
-              My main stack currently is React/Next.js in combination with
-              Tailwind CSS.
+              My primary technology stack includes the MERN stack (MongoDB,
+              Express.js, React/Next.js, and Node.js), combined with Tailwind
+              CSS for responsive and modern designs.
             </p>
 
             {/* Download CV Button */}
