@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -11,7 +11,7 @@ const fadeIn = {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 0.5 * index,
+        delay: 0.2 * index,
         duration: window.innerWidth > 768 ? 0.6 : 0.4,
       },
     };
@@ -23,7 +23,7 @@ const projects = [
     title: "OvenOnWheels",
     description:
       "The Pizza Shop Web App is a modern platform for online pizza ordering and management, built with Next.js, MongoDB, Stripe, and Cloudinary. It features a user-friendly interface for customers to browse, customize, and order pizzas, with secure payment processing via Stripe. A unique AI-powered Pizza Customization Assistant personalizes recommendations based on customer preferences, dietary needs, and order history, enhancing the user experience.  The admin panel allows efficient management of menu items, categories, users, and orders, with dynamic image handling powered by Cloudinary. With a clean and responsive design, the app delivers a seamless experience for both customers and administrators, making it an ideal solution for pizza businesses.",
-    techStack: ["React", "Next.js"],
+    techStack: ["Next.js", "MongoDB", "Node.js", "Stripe"],
     imgSrc: "/image/OvenOnWheels.png",
     codeLink: "https://github.com/sam10556/OvenOnWheels",
     demoLink: "https://oven-on-wheels.vercel.app/",
@@ -32,7 +32,7 @@ const projects = [
     title: "MockMate",
     description:
       "MockMate is an AI-powered interview and exam preparation platform built with React (Vite) on the frontend and Node.js on the backend. It leverages Google's Gemini API to generate intelligent interview questions, evaluate responses, and provide insightful feedback. Currently, the project is being enhanced with LangChain to improve conversational AI capabilities, enabling dynamic, context-aware interactions. Whether you're preparing for a job interview or an exam, MockMate offers a seamless, interactive experience to refine your skills.",
-    techStack: ["React", "Express.js", "Node.js"],
+    techStack: ["React.js", "Express.js", "Node.js", "LangChain"],
     imgSrc: "/image/MockMate.png",
     codeLink: "https://github.com/sam10556/MockMate",
     demoLink: "https://mock-mate-opal.vercel.app/",
@@ -41,7 +41,7 @@ const projects = [
     title: "NattyFit",
     description:
       "The Gym Web App is a comprehensive fitness platform built with the MERN stack (MongoDB, Express, React, Node.js) to support users on their fitness journeys. It offers general content for all visitors, while registered users gain access to personalized features, including a workout tracker, a random workout generator, and an AI-powered fitness chatbot for guidance. Additionally, users can track their progress over time, making it easier to stay motivated and achieve their fitness goals.",
-    techStack: ["React", "Express.js", "Node.js"],
+    techStack: ["React.js", "Express.js", "Node.js", "MongoDB"],
     imgSrc: "/image/NattyFit.png",
     codeLink: "https://github.com/sam10556/React-NattyFit",
     demoLink: "https://nattyfit-gym-app.vercel.app/",
@@ -59,7 +59,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "My portfolio website is a responsive and minimalistic platform built using React.js and TailwindCSS. It showcases my skills, projects, and experiences in a clean and modern design, emphasizing usability and performance. With a mobile-first approach and smooth navigation, it provides an engaging experience across all devices, reflecting my focus on simplicity and attention to detail in web development.",
-    techStack: ["React.jss", "TailwindCSS"],
+    techStack: ["React.js", "TailwindCSS", "Framer Motion"],
     imgSrc: "/image/Portfolio.png",
     codeLink: "https://github.com/sam10556/React-Portfolio",
     demoLink: "https://samyakdev.netlify.app/",
@@ -67,17 +67,78 @@ const projects = [
 ];
 
 const Project = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", mouseMove);
+    return () => window.removeEventListener("mousemove", mouseMove);
+  }, []);
+
+  useEffect(() => {
+    const matchDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    setIsDarkMode(matchDark.matches);
+
+    const handleChange = (e) => setIsDarkMode(e.matches);
+    matchDark.addEventListener("change", handleChange);
+
+    return () => matchDark.removeEventListener("change", handleChange);
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
+      height: 16,
+      width: 16,
+      backgroundColor: isDarkMode ? "#ffffff" : "#0e1012",
+      mixBlendMode: isDarkMode ? "difference" : "normal",
+      opacity: 0, // Hide in default
+    },
+    text: {
+      x: mousePosition.x - 25,
+      y: mousePosition.y - 25,
+      height: 50,
+      width: 50,
+      backgroundColor: isDarkMode ? "#ffffff" : "#0e1012",
+      mixBlendMode: "difference",
+      opacity: 1, // Show when on text
+    },
+  };
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   return (
     <div
       id="project"
       className="bg-[#F9F9F9] dark:bg-[#0e1012] py-[8rem] px-0 h-auto"
     >
+      <motion.div
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999]"
+        style={{ backgroundColor: "#0e1012" }}
+        variants={variants}
+        animate={cursorVariant}
+        transition={{ type: "tween", ease: "backOut" }}
+      />
       <div className="mx-auto my-0 max-w-[120rem] lg:px-16 md:px-16 px-8 py-0">
         <div className="text-center">
-          <h3 className="text-[#147efb] dark:text-[#82aaff] text-[1.75rem] font-bold mb-4 uppercase">
+          <h3
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className="text-[#147efb] dark:text-[#82aaff] text-[1.75rem] font-bold mb-4 uppercase"
+          >
             Project
           </h3>
-          <h4 className="text-[#2d2e32] dark:text-[#e4e4e7] text-3xl font-semibold mb-8">
+          <h4
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className="text-[#2d2e32] dark:text-[#e4e4e7] text-3xl font-semibold mb-8"
+          >
             These are the recent projects to showcase my skills
           </h4>
         </div>
@@ -104,10 +165,12 @@ const Project = () => {
                   />
                   {/* Text on the right */}
                   <div className="flex flex-col justify-between p-4 lg:w-2/3">
-                    <header className="flex flex-row justify-between mb-4 mx-4">
+                    <header className="flex flex-col sm:flex-row justify-center items-center sm:justify-between mb-4 mx-4">
                       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2d2e32] dark:text-[#e4e4e7]">
                         <a
                           className="no-underline hover:underline"
+                          onMouseEnter={textEnter}
+                          onMouseLeave={textLeave}
                           href={project.demoLink}
                         >
                           {project.title}
@@ -117,6 +180,8 @@ const Project = () => {
                         {project.techStack.map((tech, i) => (
                           <h2
                             key={i}
+                            onMouseEnter={textEnter}
+                            onMouseLeave={textLeave}
                             className="hover:underline cursor-pointer text-[#2d2e32] dark:text-[#82aaff]"
                           >
                             {tech}

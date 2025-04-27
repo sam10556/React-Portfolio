@@ -49,6 +49,16 @@ p {
   animation: spin 10s linear infinite;
 }
 
+.cursor {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
 @keyframes spin {
   100% {
     transform: rotate(1turn);

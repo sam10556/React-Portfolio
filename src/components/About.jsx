@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -62,15 +62,73 @@ const TextCircleAnimation = () => {
 };
 
 const About = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", mouseMove);
+    return () => window.removeEventListener("mousemove", mouseMove);
+  }, []);
+
+  useEffect(() => {
+    const matchDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    setIsDarkMode(matchDark.matches);
+
+    const handleChange = (e) => setIsDarkMode(e.matches);
+    matchDark.addEventListener("change", handleChange);
+
+    return () => matchDark.removeEventListener("change", handleChange);
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
+      height: 16,
+      width: 16,
+      backgroundColor: isDarkMode ? "#ffffff" : "#0e1012",
+      mixBlendMode: isDarkMode ? "difference" : "normal",
+      opacity: 0, // Hide in default
+    },
+    text: {
+      x: mousePosition.x - 25,
+      y: mousePosition.y - 25,
+      height: 50,
+      width: 50,
+      backgroundColor: isDarkMode ? "#ffffff" : "#0e1012",
+      mixBlendMode: "difference",
+      opacity: 1, // Show when on text
+    },
+  };
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   return (
     <div
       id="about"
       className="bg-[#F9F9F9] dark:bg-[#0e1012] lg:py-[15rem] md:py-[13rem] sm:py-[8rem] py-[8rem] px-0 h-auto"
+      style={{ cursor: "auto" }} // Force default system cursor globally
     >
+      {/* Custom Cursor */}
+      <motion.div
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999]"
+        style={{ backgroundColor: "#0e1012" }}
+        variants={variants}
+        animate={cursorVariant}
+        transition={{ type: "tween", ease: "backOut" }}
+      />
       <motion.div
         variants={fadeIn}
         initial="initial"
         whileInView="animate"
+        viewport={{
+          once: true,
+        }}
         id="container"
         className="mx-auto my-0 max-w-[120rem] px-16 py-0"
       >
@@ -97,22 +155,37 @@ const About = () => {
 
           {/* Text Section */}
           <div className="px-10">
-            <h3 className="text-[#147efb] text-[1.75rem] font-bold mb-4 uppercase">
+            <h3
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
+              className="text-[#147efb] text-[1.75rem] font-bold mb-4 uppercase"
+            >
               About Me
             </h3>
-            <h4 className="text-[#2d2e32] dark:text-white lg:text-[2.5rem] text-4xl font-semibold mb-8">
+            <h4
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
+              className="text-[#2d2e32] dark:text-white lg:text-[2.5rem] text-4xl font-semibold mb-8"
+            >
               Full Stack Developer <br /> based in Gujarat, India 📍
             </h4>
             <p className="text-[#767676] dark:text-gray-300 text-[1.75rem] font-medium">
-              Hello, I'm Samyak, a Full Stack Developer with expertise in
-              designing and developing user-centric web applications. I
-              specialize in creating clean and intuitive UI/UX experiences that
-              elevate user engagement and satisfaction.
+              Hey, I'm Samyak — whether it's building a single-page web app or a
+              full-blown multi-page project, I'm always ready to dive in and
+              make it happen.
               <br />
               <br />
-              My primary technology stack includes the MERN stack (MongoDB,
-              Express.js, React/Next.js, and Node.js), combined with Tailwind
-              CSS for responsive and modern designs.
+              I focus on creating clean, user-friendly websites that not only
+              look great but actually make sense — smooth experience, fast
+              performance, and scalable for the long run.
+              <br />
+              <br />
+              Smooth operator with the MERN stack, and always up for a new
+              challenge.
+              <br />
+              <br />
+              When I'm not coding, you’ll probably find me playing football,
+              watching football.
             </p>
 
             {/* Download CV Button */}
@@ -120,7 +193,7 @@ const About = () => {
               <button
                 type="button"
                 className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center me-2 mb-2"
-                onClick={() => window.open("/CV/Samyak_Shah_Resume.pdf")}
+                onClick={() => window.open("/CV/SamyakShah-Resume.pdf")}
               >
                 Download CV
               </button>

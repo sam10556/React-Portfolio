@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const DarkModeIcon = () => (
   <svg
@@ -69,6 +70,61 @@ const Navbar = () => {
   const [theme, setTheme] = useState(
     window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
   );
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const fadeIn = {
+    initial: { opacity: 0, y: 100 },
+    animate: (idx) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.3 * idx },
+    }),
+  };
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", mouseMove);
+    return () => window.removeEventListener("mousemove", mouseMove);
+  }, []);
+
+  useEffect(() => {
+    const matchDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    setIsDarkMode(matchDark.matches);
+
+    const handleChange = (e) => setIsDarkMode(e.matches);
+    matchDark.addEventListener("change", handleChange);
+
+    return () => matchDark.removeEventListener("change", handleChange);
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
+      height: 16,
+      width: 16,
+      backgroundColor: isDarkMode ? "#ffffff" : "#0e1012",
+      mixBlendMode: isDarkMode ? "difference" : "normal",
+      opacity: 0, // Hide in default
+    },
+    text: {
+      x: mousePosition.x - 25,
+      y: mousePosition.y - 25,
+      height: 50,
+      width: 50,
+      backgroundColor: isDarkMode ? "#ffffff" : "#0e1012",
+      mixBlendMode: "difference",
+      opacity: 1, // Show when on text
+    },
+  };
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -87,19 +143,30 @@ const Navbar = () => {
 
   return (
     <div className="bg-white dark:bg-[#0e1012]/90 dark:shadow-gray-800 flex justify-between items-center h-auto w-full mx-auto px-20 lg:py-7 py-12 left-0 top-0 text-[1.7rem] fixed shadow-md z-20 transition-colors duration-300">
+      <motion.div
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999]"
+        style={{ backgroundColor: "#0e1012" }}
+        variants={variants}
+        animate={cursorVariant}
+        transition={{ type: "tween", ease: "backOut" }}
+      />
       {/* Logo */}
-      <h1 className="w-full text-3xl font-bold text-[#2D2E32] dark:text-white px-10 cursor-pointer">
+      <h1
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
+        className="w-full text-3xl font-bold text-[#2D2E32] dark:text-white px-10 cursor-pointer"
+      >
         Samyak Shah
       </h1>
 
       {/* Desktop Navigation */}
       <ul className="hidden md:flex list-none items-center">
-          <button
-            onClick={handleThemeSwitch}
-            className="mr-20 transition-transform duration-300 transform hover:scale-125"
-          >
-            {theme === "dark" ? <DarkModeIcon /> : <LightModeIcon />}
-          </button>
+        <button
+          onClick={handleThemeSwitch}
+          className="mr-20 transition-transform duration-300 transform hover:scale-125"
+        >
+          {theme === "dark" ? <DarkModeIcon /> : <LightModeIcon />}
+        </button>
         {navItems.map((item) => (
           <li
             key={item.id}
