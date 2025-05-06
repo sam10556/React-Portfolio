@@ -1,8 +1,26 @@
-# React + Vite
+# 🚀 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and fully responsive portfolio website built with **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**. This project showcases clean UI design, smooth animations, and a mobile-first responsive layout.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** – JavaScript library for building user interfaces
+- **Vite** – Lightning-fast development environment
+- **Tailwind CSS** – Utility-first CSS framework for rapid UI development
+- **Framer Motion** – Library for animating React components with ease
+
+## ✨ Features
+
+- ✅ Clean, minimal, and modern UI
+- ✅ Fully responsive on all devices
+- ✅ Smooth page transitions and scroll animations
+- ✅ Optimized for performance with Vite
+- ✅ Easy to customize and extend
+
+## 🌐 Live Demo
+
+https://samyakdev.netlify.app/
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
